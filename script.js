@@ -1,3 +1,19 @@
+const table = document.querySelector('#table')
+
+const checkEntries = () => {
+  const inputsList = document.querySelectorAll('input')
+  let invalidInput = 0
+  inputsList.forEach((input) => {
+    if (input.value.length === 0) {
+      invalidInput++
+    }
+  })
+  if (invalidInput > 0) {
+    return
+  } else {
+    createRow()
+  }
+}
 const createRow = () => {
   const code = document.querySelector('#code').value
   const product = document.querySelector('#product').value
@@ -15,6 +31,7 @@ const createRow = () => {
     const td = document.createElement('td')
     td.innerText = info
     tr.appendChild(td)
+    table.classList.add('block')
   })
 
   tbody.appendChild(tr)
@@ -24,4 +41,5 @@ const createRow = () => {
 const cleanTable = () => {
   const tBody = document.querySelector('#table-body')
   tBody.innerHTML = ''
+  table.classList.add('hide')
 }
