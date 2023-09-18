@@ -41,5 +41,6 @@ const createRow = () => {
 const cleanTable = () => {
   const tBody = document.querySelector('#table-body')
   tBody.innerHTML = ''
+  table.classList.remove('block')
   table.classList.add('hide')
 }
