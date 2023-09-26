@@ -36,6 +36,7 @@ const createRow = () => {
 
   tbody.appendChild(tr)
   input.forEach((element) => (element.value = ''))
+  input[0].focus()
 }
 
 const cleanTable = () => {
